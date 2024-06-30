@@ -2,8 +2,12 @@ from src.masks import get_mask_account, get_mask_card_number
 from src.widget import mask_account_card, get_data
 
 
+x_file = open('data/' + "/input_text.txt", "r")
+print(x_file)
+
+
 def main() -> None:
-    items = mask_account_card('VisaPlatinum7000792289606361')
+    items = mask_account_card(x_file)
 
     first_element = items[0]
     second_element = items[1]
