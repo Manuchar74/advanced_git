@@ -26,5 +26,19 @@ def mask_account_card(user_input: str) -> (str, str, bool):
     return result1, result2, flag
 
 
+import datetime
+def get_data():
+    """Напишите функцию, которая принимает на вход строку вида
+    2018-07-11T02:26:18.671407 и возвращает строку с датой в виде
+    11.07.2018
+    """
+    data_time = datetime.datetime.now()
+    str_data_time = str(data_time)
+    split_data_time = str_data_time.split()
+    date = split_data_time[0]
+    day = date[8:]
+    mounth = date [5:7]
+    year = date [0: 4]
 
+    return day + '.' + mounth + '.' + year
 
