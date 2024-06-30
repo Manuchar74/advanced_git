@@ -1,3 +1,13 @@
+from .widget import mask_account_card
+
+x = mask_account_card('')
+second_element = x[1]
+
+if second_element == True:
+    card_number = mask_account_card
+else:
+    user_account = mask_account_card
+
 def get_mask_card_number(card_number: str) -> str:
     """
     Функция принимает на вход номер карты и возвращает ее маску.
