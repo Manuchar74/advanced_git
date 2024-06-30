@@ -1,13 +1,18 @@
 from .widget import mask_account_card
+items = mask_account_card('Счет 73654108430135874305')
 
-x = mask_account_card('')
-second_element = x[1]
+first_element = items[0]
+second_element = items[1]
+third_element = items[2]
 
-if second_element == True:
-    card_number = mask_account_card
+if third_element == True:
+    card_number = first_element
+    pref_1 = second_element
+    print(pref_1, card_number)
 else:
-    user_account = mask_account_card
-
+    user_account = first_element
+    pref_2 = second_element
+    print(pref_2, user_account)
 def get_mask_card_number(card_number: str) -> str:
     """
     Функция принимает на вход номер карты и возвращает ее маску.
@@ -51,3 +56,6 @@ def get_mask_account(user_account: str) -> str:
     z = "**" + "".join(slice_number_1)
 
     return z
+
+print(get_mask_account(user_account))
+#print(get_mask_card_number(card_number))

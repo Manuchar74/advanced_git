@@ -1,4 +1,4 @@
-def mask_account_card(user_input: str) -> (str, bool):
+def mask_account_card(user_input: str) -> (str, str, bool):
     """ Функция общей маскировки карты и счета,
     принимает на вход только один аргумент — строку,
     которая состоит из требуемых частей. Это может быть строка типа
@@ -17,11 +17,13 @@ def mask_account_card(user_input: str) -> (str, bool):
             new_number += i
 
     if new_word == 'Счет':
-        result = new_number
+        result1 = new_number
+        result2 = new_word
     else:
         flag = True
-        result = new_number
-    return result, flag
+        result1 = new_number
+        result2 = new_word
+    return result1, result2, flag
 
 
 
