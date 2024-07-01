@@ -42,5 +42,3 @@ def get_mask_account(user_account: str) -> str:
     z = "**" + "".join(slice_number_1)
 
     return z
-
-

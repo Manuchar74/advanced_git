@@ -3,7 +3,7 @@ from src.widget import mask_account_card, get_data
 
 
 def main() -> None:
-    file1 = open('data/input_text.txt', encoding='utf-8', mode='r')
+    file1 = open("data/input_text.txt", encoding="utf-8", mode="r")
     while True:
         # считываем строку
         line = file1.readline()
@@ -21,13 +21,13 @@ def main() -> None:
             card_number = first_element
             get_card = get_mask_card_number(card_number)
             pref_1 = second_element
-            print("card: " + pref_1 + ' ' + get_card)
+            print("card: " + pref_1 + " " + get_card)
 
         else:
             user_account = first_element
             get_account = get_mask_account(user_account)
             pref_2 = second_element
-            print("account: " + pref_2 + ' ' + get_account)
+            print("account: " + pref_2 + " " + get_account)
     # закрываем фай
     file1.close()
 
