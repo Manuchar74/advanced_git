@@ -1,3 +1,10 @@
+import re
+
+
+def has_cyrillic(text):
+    return bool(re.search('[а-яА-Я]', text))
+
+
 def mask_account_card(user_input: str) -> (str, str, bool):
     """ Функция общей маскировки карты и счета,
     принимает на вход только один аргумент — строку,
@@ -11,12 +18,12 @@ def mask_account_card(user_input: str) -> (str, str, bool):
     flag = False
 
     for i in word_and_number:
-        if i.isalpha():
+        if i.isalpha() or i == ' ':
             new_word += i
         else:
             new_number += i
 
-    if new_word == 'Счет':
+    if has_cyrillic(new_word):
         result1 = new_number
         result2 = new_word
     else:
@@ -27,6 +34,8 @@ def mask_account_card(user_input: str) -> (str, str, bool):
 
 
 import datetime
+
+
 def get_data():
     """Напишите функцию, которая принимает на вход строку вида
     2018-07-11T02:26:18.671407 и возвращает строку с датой в виде
@@ -37,8 +46,7 @@ def get_data():
     split_data_time = str_data_time.split()
     date = split_data_time[0]
     day = date[8:]
-    mounth = date [5:7]
-    year = date [0: 4]
+    month = date[5:7]
+    year = date[0: 4]
 
-    return day + '.' + mounth + '.' + year
-
+    return day + '.' + month + '.' + year
