@@ -32,7 +32,7 @@ def sort_by_date(list_to_sort, ascending=True):
     отсортированный по дате (date)."""
 
     sorted_products = sorted(
-        list_to_sort, key=lambda d: d.get("quantity", 0), reverse=bool(ascending)
+        list_to_sort, key=lambda d: d.get("date", 0), reverse=bool(ascending)
     )
 
     return sorted_products
