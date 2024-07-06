@@ -1,4 +1,9 @@
-def filter_by_state(input_list: list, state="EXECUTED") -> list:
+from typing import Union
+
+
+def filter_by_state(
+    input_list: list[dict[str, Union[int, str]]], state="EXECUTED"
+) -> list[dict[str, Union[int, str]]]:
     """принимает список словарей и опционально значение для ключа state
     (по умолчанию 'EXECUTED'). Функция возвращает новый список словарей,
     содержащий только те словари, у которых ключ state
@@ -26,7 +31,9 @@ input_list = [
 print(filter_by_state(input_list, state="CANCELED"))
 
 
-def sort_by_date(list_to_sort, ascending=True):
+def sort_by_date(
+    list_to_sort: list[dict[str, Union[int, str]]], ascending: bool = True
+) -> list[dict[str, Union[int, str]]]:
     """принимает список словарей и необязательный параметр, задающий порядок
     сортировки (по умолчанию — убывание). Функция должна возвращать новый список,
     отсортированный по дате (date)."""
