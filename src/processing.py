@@ -12,6 +12,7 @@ def filter_by_state(input_list: list, state="EXECUTED") -> list:
                 continue
         else:
             continue
+
     return new_list
 
 
