@@ -28,6 +28,7 @@ input_list = [
     {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
 ]
 
+
 print(filter_by_state(input_list, state="CANCELED"))
 
 
