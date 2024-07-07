@@ -1,4 +1,5 @@
 from src.masks import get_mask_account, get_mask_card_number
+from src.processing import filter_by_state, sort_by_date
 from src.widget import get_data, mask_account_card
 
 
@@ -37,3 +38,9 @@ print(get_data())
 
 if __name__ == "__main__":
     main()
+
+    input_list = []
+    print(filter_by_state(input_list, state="CANCELED"))
+
+    list_to_sort = []
+    print(sort_by_date(list_to_sort))
